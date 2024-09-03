@@ -130,3 +130,6 @@ dist
 .pnp.*
 /backend/node_modules
 /frontend/node_modules
+BackEnd/package-lock.json
+BackEnd/Projects
+FrontEnd/package-lock.json
