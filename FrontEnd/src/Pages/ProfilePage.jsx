@@ -158,14 +158,14 @@ const Profile = () => {
             </div>
 
             {/* Collage */}
-            <div className="user_collge flex items-center  gap-3">
+            <div className="user_college flex items-center  gap-3">
               {
                 student.college.length > 0 ?
                   (
                     <span className='custom-values font-signika text-center' >{student.college}</span>
                   ) : (
                     <>
-                      <span className='small_heading font-overpass text-black font-semibold' >Collage : </span>
+                      <span className='small_heading font-overpass text-black font-semibold' >College : </span>
                       <span className='custom-values font-signika text-center' >Your College Name</span>
                     </>
                   )

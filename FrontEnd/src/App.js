@@ -10,6 +10,7 @@ import EditProfile from './Pages/EditProfile'
 import Navbar from './Components/Navbar';
 import MainState from './Components/context/MainState';
 import NotificationPage from './Pages/NotificationPage';
+import ForgotPassword from './Components/ForgotPassword';
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
           <Route path="/edit-profile" element={<EditProfile />} />
           {/* Notification path */}
           <Route path="/notification" element={<NotificationPage />} />
+          {/* Forgot Password */}
+          <Route  path="/forgot-password" element={<ForgotPassword />} />
 
         </Routes>
       </MainState>
