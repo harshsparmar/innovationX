@@ -55,6 +55,9 @@ const Signup = () => {
                 name: student.name,
                 email: student.email,
                 password: student.password,
+                college:student.college,
+                username:student.username,
+                phoneno: student.phoneno, 
             })
 
             if (data.data.success === true) {

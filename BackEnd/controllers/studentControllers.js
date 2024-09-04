@@ -1,9 +1,11 @@
 const Students = require("../models/studentModel");
 const fs = require("fs");
+const bcrypt = require('bcrypt');
+
 
 module.exports.signUpStudent = async (req, res, next) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, username,phoneno,college } = req.body;
     const allReadyExist = await Students.findOne({ name, email });
     if (allReadyExist) {
       return res.json({
@@ -12,10 +14,15 @@ module.exports.signUpStudent = async (req, res, next) => {
       });
     }
 
+    const hashedPassword = await bcrypt.hash(password, 10);
+
     const studentData = await Students.create({
       name,
       email,
-      password,
+      password: hashedPassword,
+      username,
+      phone: phoneno, 
+      college,
     });
     // res.status(200).json({msg:"Profile Created SuccessFully"});
     return res.json({ success: true, student_id: studentData._id });
@@ -27,13 +34,15 @@ module.exports.signUpStudent = async (req, res, next) => {
 module.exports.logInStudent = async (req, res, next) => {
   try {
     const { email, password } = req.body;
-    const allReadyExist = await Students.findOne({ password, email });
-    if (allReadyExist) {
+    // const allReadyExist = await Students.findOne({ password, email });
+    // if (allReadyExist) {
+    const student = await Students.findOne({ email });
+    if (student && (await bcrypt.compare(password, student.password))) {
       // success
       return res.json({
         success: true,
         msg: "WelCome to your account",
-        student_id: allReadyExist._id,
+        student_id: student._id,
       });
     }
     return res.json({ success: false, msg: "Authentication failed" });

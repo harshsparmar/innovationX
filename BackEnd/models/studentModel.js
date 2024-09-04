@@ -20,9 +20,10 @@ const studentSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
+    unique: true,
   },
   phone: {
-    type: Number,
+    type: String,
     // required: true,
     default: "",
     max: 10,
