@@ -20,11 +20,10 @@ const ForgotPassword = () => {
         try {
             // Send request to reset password
             const response = await axios.post(requestResetPassword, { email });
-            
-            if (response.data.success) {
+            if (response.status === 200) {  
                 toast.success("Password reset link has been sent to your email");
             } else {
-                toast.error(response.data.msg);
+                toast.error("Something went wrong! Try again later")
             }
         } catch (error) {
             toast.error("An error occurred. Please try again.");

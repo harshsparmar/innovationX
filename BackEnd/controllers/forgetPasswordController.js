@@ -23,7 +23,7 @@ class ForgetPasswordController {
 
       await sendResetEmail(student.email, resetToken);
 
-      res.json({ message: "Password reset email sent" });
+      res.status(200).json({ message: "Password reset email sent" });
     } catch (error) {
       res.status(500).json({ message: "Error requesting password reset", error });
     }
