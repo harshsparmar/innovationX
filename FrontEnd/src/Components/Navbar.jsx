@@ -93,7 +93,7 @@ const Navbar = () => {
                     <Link to="/profile" className="menu_link p-[.1rem] flex rounded-full custom-transition bg-blue-200 shadow-md shadow-blue-200 ">
                         <img src={`${navStudent && (navStudent.image.length > 0 ? navStudent.image : "./images/default.jpg")}`} alt="user" className='w-9 h-9 rounded-full border-[1px] border-gray-400' srcSet="" />
                     </Link>
-                    <Link to="/" className='user_name font-bree text-gray-800 text-2xl hover:opacity-90 custom-transition ' >
+                    <Link to="/profile" className='user_name font-bree text-gray-800 text-2xl hover:opacity-90 custom-transition ' >
                         {navStudent && (navStudent.name.split(' ').slice(0, 2).join(' '))}{!navStudent && ""}
                     </Link>
                 </div>
