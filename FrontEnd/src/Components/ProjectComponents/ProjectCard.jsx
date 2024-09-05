@@ -19,7 +19,7 @@ const ProjectCard = ({ studentId }) => {
     return (
         <>
             {/* all projects container with headings  */}
-            <div className="all_projects_container text-white px-2 m-3  flex flex-col font-overpass items-center justify-center py-9 gap-5 shadow-sm shadow-gray-300 rounded-md bg-gray-200 ">
+            {fetchProjects.length > 0 ? (<div className="all_projects_container text-white px-2 m-3  flex flex-col font-overpass items-center justify-center py-9 gap-5 shadow-sm shadow-gray-300 rounded-md bg-gray-200 ">
                 {/* heding part */}
                 <div className="disclaimers items-center flex w-full justify-center">
                     <h2 className='font-signika font-semibold text-slate-800 text-2xl ' >CHECKOUT MY PROJECTS</h2>
@@ -67,7 +67,7 @@ const ProjectCard = ({ studentId }) => {
                     }
 
                 </div>
-            </div>
+            </div>) : ' '}
 
         </>
     )

@@ -78,8 +78,11 @@ const Navbar = () => {
     }, []);
 
     // navbar show only when loggedIn or signup
-    if (!localStorage.getItem("studentId")) {
-        return null; 
+    // if (!localStorage.getItem("studentId")) {
+    //     return null; 
+    // }
+    if(!localStorage.getItem("studentId")){
+        return null;
     }
     return (
         <>

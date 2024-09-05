@@ -61,3 +61,6 @@ body {
 .project_page_button {
   @apply py-0 px-3 w-fit bg-green-400 hover:text-slate-900 hover:bg-green-400 transition-all duration-500 rounded-md text-lg shadow-sm shadow-blue-400 font-signika opacity-90;
 }
+
+
+

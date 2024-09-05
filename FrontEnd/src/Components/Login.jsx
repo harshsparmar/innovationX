@@ -49,7 +49,7 @@ const Login = () => {
     return (
         <>
            
-           <form action="" className="create_form mt-[-10px] w-[30rem] h-[400px] px-16 flex flex-col gap-5 py-9 bg-white rounded-xl shadow-lg" >
+           <form action="" className="create_form mt-[-10px] w-[32rem] h-[400px] px-16 flex flex-col gap-5 py-9 bg-white rounded-xl shadow-lg" >
                 <div className="email_box flex flex-col gap-1 text-black mt-[-20px]">
                     <label htmlFor="login_input_email" className='text-xl font-[500]'><span className='text-black'>Email<span className='text-red-800'>*</span></span></label>
                   

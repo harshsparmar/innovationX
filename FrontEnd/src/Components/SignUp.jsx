@@ -86,7 +86,7 @@ const Signup = () => {
         <>
             {/*👉 CREATE ACCOUNT FOROM */}
 
-            <form action="" className="create_form mt-[-10px] w-[30rem] h-[550px] px-16 flex flex-col gap-5 py-9 bg-white rounded-xl shadow-lg" >
+            <form action="" className="create_form mt-[-10px] w-[32rem] h-[550px] px-16 flex flex-col gap-5 py-9 bg-white rounded-xl shadow-lg" >
 
                <div  className="flex flex-row gap-2">
 

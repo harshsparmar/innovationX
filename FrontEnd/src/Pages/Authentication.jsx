@@ -35,7 +35,7 @@ const HomePage = () => {
 
 
                 {/*  this includes login content part */}
-                <div className="login_content  text-black bg-white rounded-lg  w-[30rem] mt-[100px] py-9 flex justify-center  flex-row shadow-xl">
+                <div className="login_content  text-black bg-white rounded-lg  w-[32rem] mt-[100px] py-9 flex justify-center  flex-row shadow-xl">
                     <Tabs value={value} onChange={handleChange}  aria-label="icon label tabs example">
                         <Tab  label="Login" 
                             onClick={() => setToggleMode(true)}
