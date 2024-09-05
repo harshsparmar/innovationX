@@ -50,13 +50,41 @@ function Folder({ name, children }) {
     )
 }
 
-function File({ name, path }) {
+function File({ name, path, setHtmlContent }) {
     const { setCode } = useContext(mainContext);
+
     const codeFetch = async (path) => {
         const data = await axios.post(getCode, { path });
         const str = data.data.replace(/\\/g, '\n')
         setCode(str);
+
+        if (name.endsWith('.html')) {
+            const htmlContent = str;
+            const cssPath = path.replace('index.html', 'styles.css');
+            const jsPath = path.replace('index.html', 'script.js');
+
+            const cssData = await axios.post(getCode, { path: cssPath }).catch(() => ({ data: '' }));
+            const jsData = await axios.post(getCode, { path: jsPath }).catch(() => ({ data: '' }));
+
+            const cssContent = cssData.data.replace(/\\/g, '\n');
+            const jsContent = jsData.data.replace(/\\/g, '\n');
+
+            const combinedContent = `
+                <html>
+                    <head>
+                        <style>${cssContent}</style>
+                    </head>
+                    <body>
+                        ${htmlContent}
+                        <script>${jsContent}</script>
+                    </body>
+                </html>
+            `;
+
+            setHtmlContent(combinedContent);
+        }
     }
+
     return (
         <div className="files flex cursor-pointer ">
             <SubdirectoryArrowRightIcon className='text-gray-800' />
@@ -66,7 +94,7 @@ function File({ name, path }) {
     )
 }
 
-function FolderStructure({ data }) {
+function FolderStructure({ data, setHtmlContent }) {
     const renderNode = (node) => {
         if (node.type === 'folder') {
             return (
@@ -75,7 +103,7 @@ function FolderStructure({ data }) {
                 </Folder>
             );
         } else if (node.type === 'file') {
-            return <File key={node.name} name={node.name} path={node.path} />;
+            return <File key={node.name} name={node.name} path={node.path} setHtmlContent={setHtmlContent} />;
         }
         return null;
     };
@@ -93,13 +121,13 @@ const ProjectPage = () => {
     // Rating value
     const [ratingValue, setRatingValue] = React.useState(2); // custom input
 
-
     const searchQuery = useSearchParams()[0];
     const PROJECTID = searchQuery.get("PROJECTID"); // null or id
 
     const navigate = useNavigate();
     const [copied, setCopied] = useState(false);
     const [project, setProject] = useState(null);
+    const [htmlContent, setHtmlContent] = useState(''); // Initialize htmlContent state
 
     const { code, setCode } = useContext(mainContext);
     useEffect(() => {
@@ -268,7 +296,7 @@ const ProjectPage = () => {
                         <div className="structures overflow-y-auto flex flex-col ">
 
                             {/* root folder design --------------------*/}
-                            {project && <FolderStructure data={[project.folderStructure]} />}
+                            {project && <FolderStructure data={[project.folderStructure]} setHtmlContent={setHtmlContent} />}
                         </div>
 
 
@@ -322,6 +350,18 @@ const ProjectPage = () => {
                                 {code}
                             </SyntaxHighlighter>
                         </div>
+                    </div>
+
+                    {/* iframe to display HTML content */}
+                    <div className="iframe_container w-full h-[50vh] bg-white mt-4">
+                        <iframe
+                            srcDoc={htmlContent}
+                            title="Output"
+                            sandbox="allow-scripts"
+                            frameBorder="0"
+                            width="100%"
+                            height="100%"
+                        />
                     </div>
 
                 </div>

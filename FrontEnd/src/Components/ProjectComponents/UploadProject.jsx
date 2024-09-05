@@ -92,7 +92,7 @@ const UploadProject = ({ onClose }) => {
                             <input
                                 value={projectName}
                                 onChange={(e) => setProjectName(e.target.value)} // set value when change
-                                type="text" name="input_project_name" id="input_project_name" className='py-1 px-3 w-full bg-gray-100' placeholder='Enter Your Name' />
+                                type="text" name="input_project_name" id="input_project_name" className='py-1 px-3 w-full bg-gray-100' placeholder='Enter Project Name' />
                         </div>
 
                         {/* for input description  */}
@@ -102,7 +102,7 @@ const UploadProject = ({ onClose }) => {
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)} // set value when change
                                 name="input_project_description" id="input_project_description" className='py-1 px-3 w-full bg-gray-100'
-                                placeholder='Project Description' autoComplete="on" >
+                                placeholder='Enter Project Description' autoComplete="on" >
                             </textarea>
                         </div>
 
