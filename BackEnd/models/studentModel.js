@@ -1,19 +1,12 @@
 const mongoose = require("mongoose");
 
 const studentSchema = new mongoose.Schema({
-  // foodname:{
-  //     type:String,
-  //     required:true,
-  //     min:2,
-  //     max:20,
-  // }
   name: {
     type: String,
     required: true,
   },
   username: {
     type: String,
-    // required: true,
     max: 10,
     default: "",
   },
@@ -24,7 +17,6 @@ const studentSchema = new mongoose.Schema({
   },
   phone: {
     type: String,
-    // required: true,
     default: "",
     max: 10,
     min: 10,
@@ -94,5 +86,14 @@ const studentSchema = new mongoose.Schema({
   programming: {
     type: [String],
   },
+  // Fields for password reset
+  resetPasswordToken: {
+    type: String,
+    default: "",
+  },
+  resetPasswordExpires: {
+    type: Date,
+  },
 });
+
 module.exports = mongoose.model("Students", studentSchema);

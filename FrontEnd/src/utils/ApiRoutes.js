@@ -5,7 +5,8 @@ export const logInStudent = `${host}/api/students/login`;
 export const getStudentInfo = `${host}/api/students/student`; //id
 export const upDateStudentInfo = `${host}/api/students/updateinfo`; //id
 export const upDateStudentImg = `${host}/api/students/updateimg`; //id
-export const resetPassword = `${host}/api/students/forgot-password`;
+export const requestResetPassword = `${host}/api/students/request-reset-password`;
+export const resetPassword = `${host}/api/students/reset-password`;
 
 export const upLoadProject = `${host}/api/projects/projectupload`;
 export const upDateProjectFile = `${host}/api/projects/updateprojectfile`; //id

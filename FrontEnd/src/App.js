@@ -10,7 +10,8 @@ import EditProfile from './Pages/EditProfile'
 import Navbar from './Components/Navbar';
 import MainState from './Components/context/MainState';
 import NotificationPage from './Pages/NotificationPage';
-import ForgotPassword from './Components/ForgotPassword';
+import RequestResetForm  from './Components/RequestResetPassword';
+import ResetPasswordForm from './Components/ResetPasswordForm';
 
 function App() {
   return (
@@ -35,8 +36,8 @@ function App() {
           {/* Notification path */}
           <Route path="/notification" element={<NotificationPage />} />
           {/* Forgot Password */}
-          <Route  path="/forgot-password" element={<ForgotPassword />} />
-
+          <Route path="/request-reset-password" element={<RequestResetForm/>} />
+          <Route path="/reset-password/:token" element={<ResetPasswordForm/>} />
         </Routes>
       </MainState>
     </>

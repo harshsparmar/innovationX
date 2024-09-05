@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
-import { resetPassword } from '../utils/ApiRoutes'; // Make sure to update this with the correct API route
+import { requestResetPassword } from '../utils/ApiRoutes'; // Make sure to update this with the correct API route
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState('');
@@ -19,7 +19,7 @@ const ForgotPassword = () => {
 
         try {
             // Send request to reset password
-            const response = await axios.post(resetPassword, { email });
+            const response = await axios.post(requestResetPassword, { email });
             
             if (response.data.success) {
                 toast.success("Password reset link has been sent to your email");
@@ -34,7 +34,7 @@ const ForgotPassword = () => {
     };
 
     return (
-        <div className="forgot-password-container w-[35rem] mx-auto mt-10">
+        <div className="request-reset-container w-[35rem] mx-auto mt-10">
             <h1 className="text-2xl font-bold mb-4">Forgot Password</h1>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <label htmlFor="email" className='text-xl font-[600] opacity-70'>Email Address *</label>

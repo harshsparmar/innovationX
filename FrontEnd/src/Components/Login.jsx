@@ -92,7 +92,7 @@ const Login = () => {
                     </div>
                 </div>
                 <div className="links flex flex-row items-end justify-between mt-4">
-                        <Link to="/forgot-password" className='text-blue-500 hover:underline'>Forgot Password?</Link>
+                        <Link to="/request-reset-password" className='text-blue-500 hover:underline'>Forgot Password?</Link>
                         <Link to="/forgot-username" className='text-blue-500 hover:underline'>Forgot Username?</Link>
                     </div>
                 <div className="button_box flex flex-col justify-center py-4 items-center gap-4">
