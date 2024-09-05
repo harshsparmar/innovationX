@@ -160,8 +160,8 @@ const MessagePage = () => {
                                         onClick={() => { if (windowWidth <= 821) { setShowChat(true); scrollToBottom(); } }}
                                         className="person_details cursor-pointer text-gray-100 hover:text-slate-100 rounded hover:bg-slate-500 flex custom-transition justify-between h-14 bg-slate-400 px-5 items-center">
                                         <div className="person_box flex gap-3  py-1 items-center">
-                                            <img className='h-10 w-10 rounded-full' src="./Images/dushyant.jpg" alt="lokeshwar" />
-                                            <h3 className='text-lg ' >Dushyant Das</h3>
+                                            <img className='h-10 w-10 rounded-full' src="./Images/harsh.jpg" alt="harsh" />
+                                            <h3 className='text-lg ' >Savan Dangar</h3>
                                         </div>
                                         <span className='opacity-85' >12/09/23</span>
                                     </div>
@@ -171,8 +171,8 @@ const MessagePage = () => {
                                         onClick={() => { if (windowWidth <= 821) { setShowChat(true); scrollToBottom(); } }}
                                         className="person_details cursor-pointer text-gray-100 hover:text-slate-100 rounded hover:bg-slate-500 flex custom-transition justify-between  h-14  bg-slate-400 px-5 items-center">
                                         <div className="person_box flex gap-3  py-1 items-center">
-                                            <img className='h-10 w-10 rounded-full' src="./Images/khilendra.jpg" alt="lokeshwar" />
-                                            <h3 className='text-lg' >Khilendra Kumar</h3>
+                                            <img className='h-10 w-10 rounded-full' src="./Images/harsh.jpg" alt="harsh" />
+                                            <h3 className='text-lg' >Harsh Parmar</h3>
                                         </div>
                                         <span className='opacity-85' >Yesterday</span>
                                     </div>
@@ -182,8 +182,8 @@ const MessagePage = () => {
                                         onClick={() => { if (windowWidth <= 821) { setShowChat(true) } }}
                                         className="person_details cursor-pointer text-gray-100 hover:text-slate-100 rounded hover:bg-slate-500 flex custom-transition justify-between  h-14  bg-slate-400 px-5 items-center">
                                         <div className="person_box flex gap-3  py-1 items-center">
-                                            <img className='h-10 w-10 rounded-full' src="./Images/takeshwar.jpg" alt="lokeshwar" />
-                                            <h3 className='text-lg' >Takeshwar Janghel</h3>
+                                            <img className='h-10 w-10 rounded-full' src="./Images/savan.jpg" alt="harsh" />
+                                            <h3 className='text-lg' >Srujal Chauhan</h3>
                                         </div>
                                         <span className='opacity-85' >Today</span>
                                     </div>
@@ -203,9 +203,9 @@ const MessagePage = () => {
                         {/* receiver details */}
                         <div className="receiver_box flex items-center justify-between text-white h-14 bg-slate-400 py-2 ">
                             <div className="receiver_details flex items-center gap-2  px-3">
-                                <img className='h-11 w-11 rounded-full cursor-pointer' src="./Images/takeshwar.jpg" alt="" srcSet="" />
+                                <img className='h-11 w-11 rounded-full cursor-pointer' src="./Images/savan.jpg" alt="" srcSet="" />
                                 <div className="person_online flex flex-col justify-center ">
-                                    <h3>Takeshwar Janghel</h3>
+                                    <h3>Savan Dangar</h3>
                                     <span className='text-sm' >Online</span>
                                 </div>
                             </div>

@@ -10,11 +10,9 @@ const NotificationPage = () => {
 
     // TEMPORARY data for render notification user image namd
     const [userNotificationData, setNotificationData] = useState([
-        { id: 0, name: "Dushyant Das", img: './Images/dushyant.jpg' },
-        { id: 1, name: "Lokeshwar Prasad", img: './Images/lokeshwar1.jpg' },
-        { id: 2, name: "Takeshwar Janghel", img: './Images/takeshwar.jpg' },
-        { id: 3, name: "Lokeshwar Prasad", img: './Images/lokeshwar2.jpg' },
-        { id: 4, name: "Khilendra Kumar", img: './Images/khilendra.jpg' },
+        { id: 0, name: "Savan Dangar", img: '' },
+        { id: 1, name: "Harsh Parmar", img: '' },
+        { id: 2, name: "Srujal Chauhan", img: '' },
     ]);
 
 
@@ -100,8 +98,8 @@ const NotificationPage = () => {
                         }
                         {/* <div className="comments_box bg-slate-800 rounded max-w-lg px-2 py-1 ">
                             <div className="profile_image flex items-center  gap-2">
-                                <img src="./Images/takeshwar.jpg" className="h-6 w-6 rounded-full" alt="" />
-                                <h3 className='text-sm opacity-90 font-no' >Takeshwar Janghel</h3>
+                                <img src="./Images/savan.jpg" className="h-6 w-6 rounded-full" alt="" />
+                                <h3 className='text-sm opacity-90 font-no' >savan Janghel</h3>
                             </div>
                             <div className="comment px-8 ">
                                 <h6 className='text-[0.8rem] leading-4 opacity-90 font-thin ' >Lorem adipisicing elit. Facere accusamus earum ipsam nulla asperiores aspernatur quas vero </h6>
