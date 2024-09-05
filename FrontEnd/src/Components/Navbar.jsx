@@ -77,18 +77,21 @@ const Navbar = () => {
         };
     }, []);
 
-
+    // navbar show only when loggedIn or signup
+    if (!localStorage.getItem("studentId")) {
+        return null; 
+    }
     return (
         <>
             {/* navbar container */}
-            <nav id="navbar" className={`nav_container ${!localStorage.getItem("studentId") && "do-not-show "} flex items-center justify-between px-60 h-16 bg-slate-100 min-w-full `} >
+             <nav id="navbar" className={`nav_container ${!localStorage.getItem("studentId") && "do-not-show "} flex items-center justify-between px-60 h-16 bg-slate-100 min-w-full `} >
                 {/* header section left part */}
                 <div className="header flex items-center gap-7">
                     <Link to="/profile" className="menu_link p-[.1rem] flex rounded-full custom-transition bg-blue-200 shadow-md shadow-blue-200 ">
                         <img src={`${navStudent && (navStudent.image.length > 0 ? navStudent.image : "./images/default.jpg")}`} alt="user" className='w-9 h-9 rounded-full border-[1px] border-gray-400' srcSet="" />
                     </Link>
                     <Link to="/" className='user_name font-bree text-gray-800 text-2xl hover:opacity-90 custom-transition ' >
-                        {navStudent && (navStudent.name.split(' ').slice(0, 2).join(' '))}{!navStudent && "Unknown Student"}
+                        {navStudent && (navStudent.name.split(' ').slice(0, 2).join(' '))}{!navStudent && ""}
                     </Link>
                 </div>
                 {/* right part */}
@@ -170,14 +173,14 @@ const Navbar = () => {
                     </li>
                     {/* Logout icon menu link */}
                     <li>
-                        <Link to="/auth" className="menu_link flex items-center  justify-center  hover:bg-blue-100   px-3 py-2 custom-transition hover:opacity-90 rounded-2xl ">
+                        <Link to="/" className="menu_link flex items-center  justify-center  hover:bg-blue-100   px-3 py-2 custom-transition hover:opacity-90 rounded-2xl ">
                             {/* we changing content when mobile size  */}
                             {
                                 !isMobile ? (
                                     <>
                                         <Tooltip title="Logout" arrow>
                                             <LogoutIcon onClick={() => { localStorage.removeItem("studentId"); localStorage.removeItem("studentInfo") }}
-                                                className='text-blue-900 '
+                                                className='text-black-900 '
                                                 style={{ fontSize: '1.8rem' }}
                                             />
                                         </Tooltip>
@@ -185,7 +188,7 @@ const Navbar = () => {
                                 ) : (
                                     <h3 className='custom-menu-link font-overpass'
                                         //Also Close reponsive menu when cicked
-                                        onClick={(e) => { e.preventDefault(); setShowMenu(!showMenu); setNavbarRender(!navbarRender); localStorage.removeItem("studentId"); navigate("/auth") }}
+                                        onClick={(e) => { e.preventDefault(); setShowMenu(!showMenu); setNavbarRender(!navbarRender); localStorage.removeItem("studentId"); navigate("/") }}
                                     >Logout</h3>
                                 )
                             }

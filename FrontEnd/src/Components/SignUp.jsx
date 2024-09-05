@@ -86,7 +86,7 @@ const Signup = () => {
         <>
             {/*👉 CREATE ACCOUNT FOROM */}
 
-            <form action="" className="create_form mt-[-10px] w-[35rem] h-[495px] px-16 flex flex-col gap-5 py-9 bg-white rounded-xl shadow-lg" >
+            <form action="" className="create_form mt-[-10px] w-[30rem] h-[550px] px-16 flex flex-col gap-5 py-9 bg-white rounded-xl shadow-lg" >
 
                <div  className="flex flex-row gap-2">
 
@@ -96,7 +96,7 @@ const Signup = () => {
                     <input
                         value={student.name}
                         onChange={(e) => handleInputChange(e)} // set value when change
-                        type="text" name="name" id="create_input_name" className='py-1 px-3 w-full bg-white border rounded' placeholder='Enter Your  Full-name' />
+                        type="text" name="name" id="create_input_name" className='py-1 px-3 w-full bg-white border rounded' placeholder='Enter Your Full-name' />
                 </div>
                     {/* username */}
                 <div className="username_box flex flex-col gap-2">
@@ -198,12 +198,12 @@ const Signup = () => {
                         // signup button
                         onClick={handleSignup}
                         disabled={loading}
-                        className='bg-[#151717] w-full py-[5px] rounded  text-white text-md hover:bg-black  '
+                        className='bg-[#151717] w-full py-[5px] rounded-lg  text-white text-md hover:bg-black  '
                     >
                         {/* button content is changing to circluar progress when upload image */}
                         {loading ?
-                            (<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                <CircularProgress color="inherit" size={28} />
+                            (<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+                                <CircularProgress color="inherit" size={28}  />
                             </Box>
                             ) : ('Sign Up')}
                     </button>

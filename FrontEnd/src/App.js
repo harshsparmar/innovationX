@@ -19,9 +19,9 @@ function App() {
         <Navbar />
         <Routes>
           {/* user authenticate goto home page */}
-          <Route path="/" element={<HomePage />} />
+          {/* <Route path="/" element={<HomePage />} /> */}
           {/* user need login register goto authentication */}
-          <Route path="/auth" element={<Authentication />} />
+          <Route path="/" element={<Authentication />} />
           {/* after register goto profile section */}
           <Route path="/profile" element={<ProfilePage />} />
           {/* can see Project information */}
