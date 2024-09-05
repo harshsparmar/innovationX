@@ -7,13 +7,14 @@ const transporter = nodemailer.createTransport({
 });
 
 const sendResetEmail = (email, resetToken) => {
-  const resetLink = `http://localhost:3000/reset-password/${resetToken}`; // Adjust URL as needed
+  const resetLink = `http://localhost:3000/reset-password/${resetToken}`; 
 
   const mailOptions = {
     from: "no-reply@example.com",
     to: email,
     subject: "Password Reset",
-    text: `Click the link to reset your password: ${resetLink}`,
+    html: `Click <a href=${resetLink}>Here</a> to reset your password.`,
+
   };
 
   return transporter.sendMail(mailOptions);
