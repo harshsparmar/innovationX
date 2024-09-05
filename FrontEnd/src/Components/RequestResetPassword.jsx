@@ -49,7 +49,7 @@ const ForgotPassword = () => {
                 />
                 <button
                     type="submit"
-                    className='bg-blue-600 py-2 px-4 rounded text-white text-xl hover:bg-blue-700 disabled:opacity-50'
+                    className='bg-[#151717] py-2 px-4 rounded-lg text-white text-xl hover:bg-gray-700 disabled:opacity-50'
                     disabled={loading}
                 >
                     {loading ? "Sending..." : "Send Reset Link"}

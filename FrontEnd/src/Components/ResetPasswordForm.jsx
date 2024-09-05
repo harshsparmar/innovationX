@@ -34,8 +34,8 @@ const ResetPasswordForm = () => {
   };
 
   return (
-    <div  className=" flex justify-center items-center flex-col ">
-      <label>Change Password</label>
+    <div  className=" flex justify-center items-center flex-col bg-gray-200 w-[400px] ml-[600px] mt-36 p-5 rounded-lg ">
+      <label className="mb-3">Change Password</label>
 
       <form onSubmit={handleSubmit}>
       {/* New Password Field */}
@@ -45,12 +45,12 @@ const ResetPasswordForm = () => {
           placeholder="Enter new password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="py-1 px-3 w-full bg-white border rounded"
+          className="py-1 px-3 w-full bg-white border-2 rounded"
         />
         <button
           type="button"
           onClick={toggleShow}
-          className="show_button bg-white py-1 px-2 rounded-br-md rounded-tr-md "
+          className="ml-2"
         >
           {showPass ? (
             <VisibilityOffIcon className="text-black" />
@@ -85,7 +85,7 @@ const ResetPasswordForm = () => {
       {/* Submit Button */}
       <button
         type="submit"
-        className="mt-6 bg-blue-500 text-white py-2 px-4 rounded"
+        className="mt-6 bg-[#151717] text-white py-2 px-4 rounded hover:bg-gray-800"
       >
         Reset Password
       </button>
